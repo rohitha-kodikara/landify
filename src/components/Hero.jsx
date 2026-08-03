@@ -2,6 +2,48 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+const ratingFeedbacks = [
+  {
+    id: 1,
+    stars: 5,
+    comment:
+      "Landify helped us ship faster with cleaner design decisions across every screen.",
+  },
+  {
+    id: 2,
+    stars: 4,
+    comment:
+      "The templates are flexible and modern, but still easy for our team to customize.",
+  },
+  {
+    id: 3,
+    stars: 3,
+    comment:
+      "Good starting point for prototypes and quick experiments inside our workflow.",
+  },
+  {
+    id: 4,
+    stars: 2,
+    comment:
+      "Solid visuals, though we needed extra tweaks for some advanced interactions.",
+  },
+  {
+    id: 5,
+    stars: 1,
+    comment:
+      "Helpful for inspiration, but our use case required a deeper custom build.",
+  },
+];
+
 const Hero = () => {
   return (
     <div className="flex flex-col overflow-hidden  py-14 text-white px-3 sm:grid sm:grid-cols-2 gap-3 sm:gap-8">
@@ -67,8 +109,51 @@ const Hero = () => {
         <img
           src="/purple.png"
           alt="purple"
-          className="w-[420px] max-w-full rounded-xl object-cover"
+          className="w-105 max-w-full rounded-xl object-cover"
         />
+      </div>
+      <div className="mt-12 w-full sm:col-span-2">
+        <Carousel
+          opts={{ align: "start", containScroll: "trimSnaps" }}
+          className="relative w-full max-w-none px-12"
+        >
+          <CarouselContent>
+            {ratingFeedbacks.map((feedback) => (
+              <CarouselItem
+                key={feedback.id}
+                className="flex basis-full sm:basis-1/2 md:basis-1/3 "
+              >
+                <div className="p-1  h-full w-full">
+                  <Card className="h-full min-h-50 border-white/10 bg-[#0b0b14] text-white ">
+                    <CardContent className="p-5 sm:p-6 ">
+                      <div className="flex items-center gap-1">
+                        {Array.from({ length: 5 }).map((_, starIndex) => {
+                          const isFilled = starIndex < feedback.stars;
+
+                          return (
+                            <Star
+                              key={starIndex}
+                              className={`h-4 w-4 ${
+                                isFilled
+                                  ? "text-yellow-400 fill-yellow-400"
+                                  : "text-neutral-600"
+                              }`}
+                            />
+                          );
+                        })}
+                      </div>
+                      <p className="t-4 flex-1 text-sm leading-relaxed pt-3 text-neutral-200">
+                        {feedback.comment}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-2 top-1/2 bottom-auto my-0 -translate-x-1/2 -translate-y-1/2 size-10 [&_svg]:size-6" />
+          <CarouselNext className="right-2 top-1/2 bottom-auto my-0 translate-x-1/2 -translate-y-1/2 size-10 [&_svg]:size-6" />
+        </Carousel>
       </div>
     </div>
   );
