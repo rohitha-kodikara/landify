@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar/Navbar";
-
+import Learn from "./components/Learn";
+import ReactLenis from "lenis/react";
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -16,9 +17,22 @@ const App = () => {
 
   return (
     <>
+      <ReactLenis
+        root
+        options={{
+          lerp: 0.5, // smoothing intensity, 0–1 (lower = more "float")
+          duration: 1.2, // only used if lerp isn't set — pick one or the other
+          smoothWheel: true,
+          autoRaf: true, // let Lenis run its own raf loop (simplest — skip Step 5)
+        }}
+      />
+
       <div className="rounded-md px-2 py-2 mx-1 my-1 flex flex-col bg-hero-gradient">
         <Navbar isScrolled={isScrolled} />
         <Hero />
+      </div>
+      <div className="px-2 py-2 mx-1 my-1 flex flex-col">
+        <Learn />
       </div>
     </>
   );
