@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Learn from "./components/Learn";
 import Author from "./components/Author";
+import Chapters from "./components/Chapters";
 import ReactLenis from "lenis/react";
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,6 +36,7 @@ const App = () => {
       <div className="px-2 py-2 mx-1 my-1 flex flex-col">
         <Learn />
         <Author />
+        <Chapters />
       </div>
     </>
   );
