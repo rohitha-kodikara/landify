@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Learn from "./components/Learn";
 import Author from "./components/Author";
 import Chapters from "./components/Chapters";
+import Pricing from "./components/Pricing";
 import ReactLenis from "lenis/react";
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,6 +40,7 @@ const App = () => {
         <Author />
         <Chapters />
         <Reviews />
+        <Pricing />
       </div>
     </>
   );
