@@ -1,16 +1,19 @@
-# React + Vite
+About This Project
+This landing page is a practice redesign of an existing template, built from scratch to improve my UI design and frontend development skills using React, Tailwind CSS, and shadcn/ui. I used an AI assistant to generate boilerplate code and handle repetitive tasks, minimizing time consumption and improving overall effectiveness. My goal was to move beyond tutorials and learn how to plan, structure, and implement a professional, fully responsive landing page on my own.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+What I Learned
+01) Responsive design with Tailwind CSS: I planned the layout to work seamlessly from mobile screens up to large desktops, using Tailwind's flexbox and grid utilities. I paid close attention to spacing, alignment, and how components should reflow across breakpoints.
 
-Currently, two official plugins are available:
+02) Layout control techniques: I practiced using utilities like mx-auto, w-[x/y], and self-start to control element positioning, centering, and alignment without relying on arbitrary custom CSS.
+   
+03) Smooth scrolling: I integrated the Lenis package to add buttery smooth scrolling across the page, improving the overall user experience.
+   
+04) Reveal animations: I used Framer Motion to animate sections and cards as they enter the viewport, creating staggered, smooth reveal effects.
+   
+05) shadcn/ui components: I added shadcn components such as the Accordion and customized them entirely through props — without modifying the original UI component files — which helped me understand component composition and style overrides.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+06) Carousel integration: I used Embla Carousel (via embla-carousel-react) to build interactive carousel sections.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+07) Professional design patterns: Throughout the project, I focused on clean spacing, consistent typography, visual hierarchy, and reusable component structure to follow real-world design standards.
+   
+This project was built as a learning exercise to understand how modern landing pages are designed, structured, and made responsive using a component-based workflow.
