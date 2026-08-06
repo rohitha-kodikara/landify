@@ -20,17 +20,19 @@ const cardVariants = {
 
 const Learn = () => {
   return (
-    <section className="learn">
-      <div className="flex flex-col gap-4 px-4">
-        <span>WHAT YOU'LL LEARN</span>
-        <span className="text-3xl font-bold ">
-          Master the Essentials of{" "}
+    <section className="learn lg:px-25 mt-10 z-0">
+      <div className="flex flex-col gap-4 lg:gap-6 lg:mt-5 px-4">
+        <span className="bg-blue-300 text-blue-800 px-3 lg:flex lg:flex-row self-start rounded-full py-1">
+          WHAT YOU'LL LEARN
+        </span>
+        <span className="text-3xl font-bold lg:-mb-3">
+          Master the Essentials of {"  "}
           <span className="text-indigo-700">Creative Design</span>
         </span>
-        <p className="text-gray-700 ">
+        <span className="text-gray-700 lg:pb-3">
           Gain expertise in design, explore processes, and effortlessly apply
           best practices to create stunning, user-friendly interfaces.
-        </p>
+        </span>
         {/*small paragraph cards*/}
         <div className="flex flex-col sm:flex sm:flex-row gap-4 sm:gap-6">
           <motion.div

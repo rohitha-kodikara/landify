@@ -46,8 +46,8 @@ const ratingFeedbacks = [
 
 const Hero = () => {
   return (
-    <div className="flex flex-col overflow-hidden  py-14 text-white px-3 sm:grid sm:grid-cols-2 gap-3 sm:gap-8">
-      <div>
+    <div className=" flex flex-col overflow-hidden lg:px-28  py-14 text-white px-3 sm:grid sm:grid-cols-2 gap-3 sm:gap-8">
+      <div className="lg:flex lg:flex-col justify-center  lg:gap-6 ">
         <h1 className="text-4xl font-bold mb-4">
           Learn how to design creative interfaces from scratch
         </h1>
@@ -55,7 +55,7 @@ const Hero = () => {
           At Landify, we blend artistry and strategy to create designs that not
           only captivate but also elevate.
         </p>
-        <div className="flex flex-col gap-3 mt-6">
+        <div className="flex flex-col gap-3 mt-6 lg:flex-row lg:gap-4 ">
           <button className="bg-indigo-500 text-white px-4 py-2 rounded-md">
             Get Started
           </button>
@@ -105,7 +105,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="mt-20 flex justify-center sm:mt-0 sm:justify-self-end">
+      <div className="mt-20  flex justify-center sm:mt-0 sm:justify-self-end ">
         <img
           src="/purple.png"
           alt="purple"
