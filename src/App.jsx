@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Hero from "./components/Hero";
 import Navbar from "./components/Navbar/Navbar";
+import Reviews from "./components/Reviews";
+import Hero from "./components/Hero";
 import Learn from "./components/Learn";
 import Author from "./components/Author";
 import Chapters from "./components/Chapters";
@@ -37,6 +38,7 @@ const App = () => {
         <Learn />
         <Author />
         <Chapters />
+        <Reviews />
       </div>
     </>
   );
