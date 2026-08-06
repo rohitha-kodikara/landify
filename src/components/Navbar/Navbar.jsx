@@ -8,9 +8,9 @@ const Navbar = ({ isScrolled }) => {
   return (
     <>
       <nav
-        className={`fixed lg:text-black top-2 left-0 right-0 z-50 flex w-full flex-row items-center justify-between rounded-xl p-3 transition-colors duration-300 lg:px-8 ${
+        className={`fixed lg:text-black lg:text-md top-2 left-0 right-0 z-50 flex w-full flex-row items-center justify-between rounded-xl p-3 transition-colors duration-300 lg:px-8 ${
           isScrolled
-            ? "bg-white   shadow-md lg:mx-auto lg:w-1/2 "
+            ? "bg-white   shadow-md lg:mx-auto lg:w-2/3"
             : "bg-transparent  lg:text-white"
         }`}
       >

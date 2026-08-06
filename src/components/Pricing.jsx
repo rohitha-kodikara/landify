@@ -1,17 +1,44 @@
 import React from "react";
 import { CircleCheck } from "lucide-react";
+import { motion } from "framer-motion";
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.15,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
 
 const Pricing = () => {
   return (
     <section className="lg:px-25 mt-10 z-0">
-      <div className="pt-15  flex flex-col gap-5 leading-relaxed lg:gap-6 lg:mt-5 px-4 bg-hero-gradient text-white rounded-md">
+      <div className="pt-15 flex flex-col gap-5 leading-relaxed lg:gap-6 lg:mt-5 px-4 sm:pb-12 bg-hero-gradient text-white rounded-md">
+        <span className="text-left bg-blue-300 text-blue-800 px-3 lg:flex lg:flex-row self-start rounded-full py-1">
+          PRICING
+        </span>
         <h2>Explore our pricing options</h2>
         <p>
           Choose the plan that best fits your needs and start your journey to
           mastering modern design today.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-gray-900 border-t-2 border-gray-500 rounded-lg p-8 flex flex-col gap-8">
+          <motion.div
+            custom={0}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.35 }}
+            className="bg-gray-900 border-t-2 border-gray-500 rounded-lg p-8 flex flex-col gap-8"
+          >
             <span className="text-sm text-gray-300 bg-gray-800 px-4 py-1 rounded-lg self-start">
               Free preview
             </span>
@@ -38,9 +65,16 @@ const Pricing = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-gray-900 border-t-2 border-indigo-500 rounded-lg p-8 flex flex-col gap-8">
+          <motion.div
+            custom={1}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.35 }}
+            className="bg-gray-900 border-t-2 border-indigo-500 rounded-lg p-8 flex flex-col gap-8"
+          >
             <span className="text-sm text-indigo-200 bg-indigo-900 px-4 py-1 rounded-lg self-start">
               The Essentials
             </span>
@@ -73,9 +107,16 @@ const Pricing = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-gray-900 border-t-2 border-amber-500 rounded-lg p-8 flex flex-col gap-8">
+          <motion.div
+            custom={2}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.35 }}
+            className="bg-gray-900 border-t-2 border-amber-500 rounded-lg p-8 flex flex-col gap-8"
+          >
             <span className="text-sm text-amber-200 bg-amber-900 px-4 py-1 rounded-lg self-start">
               Premium Bundle
             </span>
@@ -108,7 +149,7 @@ const Pricing = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,10 +1,60 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.1,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};
+
+const faqs = [
+  {
+    value: "shipping",
+    question: "What is included in the course materials?",
+    answer:
+      "The course materials include video lectures, downloadable resources, and interactive quizzes to enhance your learning experience.",
+  },
+  {
+    value: "returns",
+    question: "How long do I have access to the course after purchase?",
+    answer:
+      "You will have lifetime access to the course materials, including any updates or additions made in the future.",
+  },
+  {
+    value: "support",
+    question: "Can I download the course videos for offline viewing?",
+    answer:
+      "Yes, you can download the course videos to your device and watch them offline using our mobile app or desktop player.",
+  },
+  {
+    value: "guarantee",
+    question: "Is there a refund policy if I'm not satisfied with the course?",
+    answer:
+      "Yes, we offer a 30-day money-back guarantee. If you are not satisfied with the course for any reason, you can request a full refund.",
+  },
+  {
+    value: "prerequisites",
+    question: "Are there prerequisites for taking this course?",
+    answer:
+      "This course is designed for beginners with no prior experience required. It covers all fundamental concepts step by step.",
+  },
+];
 
 const FAQs = () => {
   return (
@@ -22,58 +72,28 @@ const FAQs = () => {
         </p>
         <div className="sm:flex flex-col sm:w-full sm:items-center">
           <Accordion defaultValue={["shipping"]} className="w-full">
-            <AccordionItem value="shipping" className="border-gray-300 py-2">
-              <AccordionTrigger className="text-gray-600  [&_[data-slot=accordion-trigger-icon]]:size-5">
-                What is included in the course materials?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600">
-                The course materials include video lectures, downloadable
-                resources, and interactive quizzes to enhance your learning
-                experience.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="returns" className="border-gray-300 py-2">
-              <AccordionTrigger className="text-gray-600 [&_[data-slot=accordion-trigger-icon]]:size-5">
-                How long do I have access to the course after purchase?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600">
-                You will have lifetime access to the course materials, including
-                any updates or additions made in the future.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="support" className="border-gray-300 py-2">
-              <AccordionTrigger className="text-gray-600 [&_[data-slot=accordion-trigger-icon]]:size-5">
-                Can I download the course videos for offline viewing?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600">
-                Yes, you can download the course videos to your device and watch
-                them offline using our mobile app or desktop player.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="guarantee" className="border-gray-300 py-2">
-              <AccordionTrigger className="text-gray-600 [&_[data-slot=accordion-trigger-icon]]:size-5">
-                Is there a refund policy if I'm not satisfied with the course?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600">
-                Yes, we offer a 30-day money-back guarantee. If you are not
-                satisfied with the course for any reason, you can request a full
-                refund.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem
-              value="prerequisites"
-              className="border-gray-300 py-2"
-            >
-              <AccordionTrigger className="text-gray-600 [&_[data-slot=accordion-trigger-icon]]:size-5">
-                Are there prerequisites for taking this course?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600">
-                This course is designed for beginners with no prior experience
-                required. It covers all fundamental concepts step by step.
-              </AccordionContent>
-            </AccordionItem>
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={faq.value}
+                custom={index}
+                variants={itemVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.35 }}
+              >
+                <AccordionItem
+                  value={faq.value}
+                  className="border-gray-300 py-2"
+                >
+                  <AccordionTrigger className="text-gray-600 [&_[data-slot=accordion-trigger-icon]]:size-5">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
+            ))}
           </Accordion>
         </div>
       </div>
