@@ -8,6 +8,7 @@ import Chapters from "./components/Chapters";
 import Pricing from "./components/Pricing";
 import FAQs from "./components/FAQs";
 import ReactLenis from "lenis/react";
+import Footer from "./components/Footer";
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -44,6 +45,7 @@ const App = () => {
         <Pricing />
         <FAQs />
       </div>
+      <Footer />
     </>
   );
 };
