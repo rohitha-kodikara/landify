@@ -2,9 +2,6 @@
 
 
 
-<img width="1891" height="862" alt="image" src="https://github.com/user-attachments/assets/476532f2-32f6-42c7-a9d1-80b65896683e" />
-
-
 About This Project
 
 This landing page is a practice redesign of an existing template, built from scratch to improve my UI design and frontend development skills using React, Tailwind CSS, and shadcn/ui. I used an AI assistant to generate boilerplate code and handle repetitive tasks, minimizing time consumption and improving overall effectiveness. My goal was to move beyond tutorials and learn how to plan, structure, and implement a professional, fully responsive landing page on my own.
